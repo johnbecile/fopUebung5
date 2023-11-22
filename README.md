@@ -6,3 +6,5 @@ Beachten Sie die Hinweise zum Herunterladen, Importieren, Bearbeitern, Exportier
 Changelog:
 
 v0.1: finished H1
+
+v0.2: finished H2
