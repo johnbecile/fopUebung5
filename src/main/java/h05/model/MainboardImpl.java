@@ -73,4 +73,28 @@ public class MainboardImpl extends PurchasedComponent implements Mainboard {
         }
         return false;
     }
+
+    /**
+     * Rate by the given rater. The rater consumes the mainboard, the CPU, the
+     * memories and the peripherals.
+     *
+     * @param rater the rater
+     */
+    @Override
+    public void rateBy(ComponentRater rater) {
+        rater.consumeMainboard(this);
+        if (this.cpu != null) {
+            rater.consumeCPU(this.cpu);
+        }
+        for (Memory memory : this.memories) {
+            if (memory != null) {
+                rater.consumeMemory(memory);
+            }
+        }
+        for (Peripheral peripheral : this.peripherals) {
+            if (peripheral != null) {
+                rater.consumePeripheral(peripheral);
+            }
+        }
+    }
 }
